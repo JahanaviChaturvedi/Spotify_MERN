@@ -18,9 +18,9 @@ const port = 3003;
 
 
 app.use(cors());
+
 // converts any body to json format
 app.use(express.json());
-
 
 // connect mongoDB to nodeJS
 mongoose
@@ -41,18 +41,18 @@ let opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.SECRET_KEY;
 passport.use(
-  new JwtStrategy(opts, async (jwt_payload, done) =>{
-    try{
+  new JwtStrategy(opts, async (jwt_payload, done) => {
+    try {
       console.log("JWT Playload: ", jwt_payload);
-      const user = await User.findOne({_id: jwt_payload.identifier});
-      if(user){
+      const user = await User.findOne({ _id: jwt_payload.identifier });
+      if (user) {
         console.log("User found: ", user);
         return done(null, user);
-      }else{
+      } else {
         console.log("User not found");
         return done(null, false);
       }
-    } catch(err){
+    } catch (err) {
       console.log("Error during token validation: ", err);
       return done(err, false);
     }
@@ -67,7 +67,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/song", songRoutes);
-app.use("/playlist",playlistRoutes);
+app.use("/playlist", playlistRoutes);
 
 // Tell express to run our page on localhost:3003
 app.listen(port, () => {
