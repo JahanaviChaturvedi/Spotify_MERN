@@ -20,6 +20,18 @@ const song = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "User",
     },
+    playCount:{
+        type: Number,
+        default:0,
+    },
+    listeners:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    }],
+    addedAt:{
+        type: Date,
+        default: Date.now,
+    },
 });
 
 const songModel = mongoose.model("Song", song);
