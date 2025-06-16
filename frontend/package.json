@@ -1,0 +1,53 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@cloudinary/react": "^1.14.1",
+    "@cloudinary/url-gen": "^1.21.0",
+    "@craco/craco": "^7.1.0",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "cloudinary-core": "^2.13.1",
+    "cloudinary-react": "^1.8.1",
+    "cra-template": "1.2.0",
+    "howler": "^2.2.4",
+    "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-cookie": "^7.2.2",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@iconify/react": "^5.2.0",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "web-vitals": "^4.2.4"
+  }
+}
